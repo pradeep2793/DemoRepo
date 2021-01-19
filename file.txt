@@ -2,3 +2,5 @@ git overview
 Distributed version control system
 
 ----------------------------------------
+
+repository creation in local and server(remote repository).
