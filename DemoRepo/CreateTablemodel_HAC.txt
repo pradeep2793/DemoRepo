@@ -1,8 +1,0 @@
-Create model steps :
-					1:Cheneycore-item.xml in item type generate
-					2:Open HAC
-					3:Platform -> Update -> tick-update running system , untick-create essential data , untick-localize types
-					4:scroll down and tick cheneycore 
-					5:Click update button 
-					6:After update successfull check model create 
-					7:Consol -> Flexible Saerch -> type query (select*from {table name} -> search result
