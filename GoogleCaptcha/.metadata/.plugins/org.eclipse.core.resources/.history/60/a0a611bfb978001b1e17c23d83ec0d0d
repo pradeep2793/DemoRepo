@@ -1,0 +1,68 @@
+package com.student;
+
+
+import java.util.Date;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+
+@Entity
+public class StudentRegister {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private int id;
+	private String name;
+	private String course;
+	private String sex;
+	private String email;
+	private Date dob;
+	private Long mobile;
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getCourse() {
+		return course;
+	}
+	public void setCourse(String course) {
+		this.course = course;
+	}
+	public String getSex() {
+		return sex;
+	}
+	public void setSex(String sex) {
+		this.sex = sex;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public Date getDob() {
+		return dob;
+	}
+	public void setDob(Date dob) {
+		this.dob = dob;
+	}
+	public Long getMobile() {
+		return mobile;
+	}
+	public void setMobile(Long mobile) {
+		this.mobile = mobile;
+	}
+	@Override
+	public String toString() {
+		return "StudentRegister [name=" + name + ", course=" + course + ", sex=" + sex + ", email=" + email + ", dob="
+				+ dob + ", mobile=" + mobile + "]";
+	}
+	
+	
+
+}

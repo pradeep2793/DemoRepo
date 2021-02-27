@@ -1,0 +1,20 @@
+package com.daos;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.orm.hibernate5.HibernateTemplate;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.student.StudentRegister;
+
+public class StudDao {
+	
+	@Autowired
+	HibernateTemplate ht = new HibernateTemplate();
+	
+	@Transactional
+	public void saved(StudentRegister student)
+	{
+		this.ht.save(student);
+	}
+
+}

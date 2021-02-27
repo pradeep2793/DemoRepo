@@ -1,0 +1,10 @@
+<html>
+<body>
+<h2>Hello World!</h2>
+<%
+String s = request.getAttribute("name").toString();
+%>
+
+<h1>Name is : <% = s; %> </h1> 
+</body>
+</html>

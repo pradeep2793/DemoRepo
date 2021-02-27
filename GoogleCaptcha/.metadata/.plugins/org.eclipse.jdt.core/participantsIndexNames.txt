@@ -1,0 +1,7 @@
+INDEX VERSION 1.131
+/home/dell/GoogleCaptcha/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/2443194352.index
+/GoogleLogin/src/main/resources
+/home/dell/GoogleCaptcha/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/3824189634.index
+/Google-Recaptcha-Java-Example/src
+/home/dell/GoogleCaptcha/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/2386900832.index
+/GoogleLogin/src/main/resources

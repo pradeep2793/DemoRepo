@@ -1,0 +1,27 @@
+package com.control;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class MyController {
+	
+	@RequestMapping("/")
+	public String home(Model model)
+	{
+		model.addAttribute("name", "Pradeep");
+		List<String> l = new ArrayList<String>();
+		l.add("A");
+		l.add("B");
+		l.add("C");
+		l.add("D");
+		l.add("E");
+		System.out.println("******************");
+		return "index";
+	}
+
+}

@@ -1,0 +1,89 @@
+<%@ page trimDirectiveWhitespaces="true"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ page isELIgnored="false"%>
+
+<html>
+<title>Add Stduent</title>
+<body>
+	<div style="margin: auto; width: 665px">
+		<form:form action="handle-training"
+			method="post">
+			<form:label path="fname">first name</form:label>
+			<br>
+			<form:input path="fname" />&nbsp;<form:errors path="fname"
+				cssStyle="color: #ff0000;" />
+			<br>
+			<br>
+			<form:label path="lname">last name</form:label>
+			<br>
+			<form:input path="lname" />&nbsp;<form:errors path="lname"
+				cssStyle="color: #ff0000;" />
+			<br>
+			<br>
+			<form:label path="mobile">mobile</form:label>
+			<br>
+			<form:input path="mobile" />&nbsp;<form:errors path="mobile"
+				cssStyle="color: #ff0000;" />
+			<br>
+			<br>
+			<form:label path="email">email</form:label>
+			<br>
+			<form:input path="email" />&nbsp;<form:errors path="email"
+				cssStyle="color: #ff0000;" />
+			<br>
+			<br>
+			<form:label path="address">address</form:label>
+			<br>
+			<form:input path="address" />&nbsp;<form:errors path="address"
+				cssStyle="color: #ff0000;" />
+			<br>
+			<br>
+			<form:label path="addCity">City</form:label>
+			<br>
+			<form:input path="addCity" />&nbsp;<form:errors path="addCity"
+				cssStyle="color: #ff0000;" />
+			<br>
+			<br>
+			<form:label path="addState">state</form:label>
+			<br>
+			<form:input path="addState" />&nbsp;<form:errors path="addState"
+				cssStyle="color: #ff0000;" />
+			<br>
+			<br>
+			<form:label path="addZipcode">zip code</form:label>
+			<br>
+			<form:input path="addZipcode" />&nbsp;<form:errors path="addZipcode"
+				cssStyle="color: #ff0000;" />
+			<br>
+			<br>
+			<form:label path="Country">Country:</form:label>&nbsp;
+<form:select path="Country">
+
+				<c:forEach items="${country}" var="country">
+					<form:option value="${country}">${country}</form:option>
+				</c:forEach>
+			</form:select>
+			<br>
+			<br>
+			<form:label path="birthdate">birth date</form:label>
+			<br>
+			<form:input path="birthdate" id="datepicker" />&nbsp;<form:errors
+				path="birthdate" cssStyle="color: #ff0000;" />
+			<br>
+			<br>
+			<form:label path="gender">gender</form:label>
+			<br>
+			<form:radiobutton path="gender" value="M" />&nbsp;<form:label
+				path="gender">male</form:label>&nbsp;&nbsp;
+<form:radiobutton path="gender" value="F" />&nbsp;<form:label
+				path="gender">female</form:label>
+			<br>
+			<br>
+			<form:button>submit</form:button>
+
+
+		</form:form>
+	</div>
+</body>
+</html>

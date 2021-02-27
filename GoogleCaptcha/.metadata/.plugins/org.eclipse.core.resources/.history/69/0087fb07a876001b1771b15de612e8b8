@@ -1,0 +1,41 @@
+<%@ page trimDirectiveWhitespaces="true"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ page isELIgnored="false"%>
+
+<html>
+<title>Add Stduent</title>
+<body>
+	<form action="save-form" method="post">
+		<table style="with: 50%">
+			<tr>
+				<td>Name</td>
+				<td><input type="text" name="name" /></td>
+			</tr>
+
+			<tr>
+				<td>Mobile</td>
+				<td><input type="number" name="mobile" /></td>
+			</tr>
+			<label> Course : </label>
+			<select>
+				<option value="Course">Course</option>
+				<option value="BCA">BCA</option>
+				<option value="BBA">BBA</option>
+				<option value="B.Tech">B.Tech</option>
+				<option value="MBA">MBA</option>
+				<option value="MCA">MCA</option>
+				<option value="M.Tech">M.Tech</option>
+			<tr>
+				<td>Address</td>
+				<td><input type="text" name="address" /></td>
+			</tr>
+			<tr>
+				<td>Contact No</td>
+				<td><input type="text" name="contact" /></td>
+			</tr>
+		</table>
+		<input type="submit" value="Submit" />
+	</form>
+</body>
+</html>

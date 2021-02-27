@@ -1,0 +1,12 @@
+<%@page import="java.util.List"%>
+<%@page isELIgnored="false"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+<html>
+<title>Add Stduent</title>
+<body>
+	<form:form action="/add-student" method="post>
+	</form:form>
+	</body>
+</body>
+</html>

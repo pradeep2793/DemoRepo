@@ -1,0 +1,17 @@
+package com.student;
+
+import java.sql.Date;
+
+import org.hibernate.annotations.Entity;
+
+@Entity
+public class StudentRegister {
+	
+	private String name;
+	private String course;
+	private String sex;
+	private String email;
+	private Date dob;
+	private Long mobile;
+
+}

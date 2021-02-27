@@ -1,0 +1,15 @@
+package com.service;
+
+import com.daos.StudDao;
+import com.student.StudentRegister;
+
+public class MyService {
+	
+	StudDao dao;
+	
+	public void input(StudentRegister student)
+	{
+		dao.saved(student);
+	}
+
+}

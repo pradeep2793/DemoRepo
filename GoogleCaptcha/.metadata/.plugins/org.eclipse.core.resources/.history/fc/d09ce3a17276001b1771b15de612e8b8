@@ -1,0 +1,29 @@
+<%@ page trimDirectiveWhitespaces="true"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ page isELIgnored="false"%>
+
+<html>
+<title>Add Stduent</title>
+<body>
+	<form:form action="/retailstore/cheneySF/en/handle-training"
+		method="post" modelAttribute="trainingDetails">
+		<form:label path="fname">first name</form:label>
+		<br>
+		<form:input path="fname" />&nbsp;<form:errors path="fname"
+			cssStyle="color: #ff0000;" />
+		<br>
+		<br>
+		<form:label path="lname">last name</form:label>
+		<br>
+		<form:input path="lname" />&nbsp;<form:errors path="lname"
+			cssStyle="color: #ff0000;" />
+		<br>
+		<br>
+		<form:label path="mobile">mobile</form:label>
+		<br>
+		<form:input path="mobile" />&nbsp;<form:errors path="mobile"
+			cssStyle="color: #ff0000;" />
+	</form:form>
+</body>
+</html>

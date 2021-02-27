@@ -1,0 +1,14 @@
+package com.daos;
+
+import org.springframework.orm.hibernate5.HibernateTemplate;
+
+public class StudDao {
+	
+	HibernateTemplate ht = new HibernateTemplate();
+	
+	public void save()
+	{
+		
+	}
+
+}

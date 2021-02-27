@@ -1,0 +1,16 @@
+package com.daos;
+
+import org.springframework.orm.hibernate5.HibernateTemplate;
+
+import com.student.StudentRegister;
+
+public class StudDao {
+	
+	HibernateTemplate ht = new HibernateTemplate();
+	
+	public void saved(StudentRegister student)
+	{
+		this.ht.save(entity)
+	}
+
+}

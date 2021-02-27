@@ -1,0 +1,18 @@
+package com.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.daos.StudDao;
+import com.student.StudentRegister;
+
+public class MyService {
+	
+	@Autowired
+	StudDao dao;
+	
+	public void input(StudentRegister student)
+	{
+		dao.saved(student);
+	}
+
+}
