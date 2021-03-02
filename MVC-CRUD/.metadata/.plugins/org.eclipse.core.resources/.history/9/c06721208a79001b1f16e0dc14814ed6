@@ -1,0 +1,31 @@
+package com.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
+
+import com.daos.StudDao;
+import com.student.StudentRegister;
+
+@Component
+@Service
+public class MyService {
+	
+	@Autowired
+	StudDao dao;
+	
+	public void input(StudentRegister student)
+	{
+		System.out.println("************SERVICE CALLED*******************");
+		dao.saved(student);
+	}
+	
+	public List<StudentRegister> fetch(StudentRegister student)
+	{
+		List<StudentRegister> student = studDao.find();
+		return student;
+	}
+
+}

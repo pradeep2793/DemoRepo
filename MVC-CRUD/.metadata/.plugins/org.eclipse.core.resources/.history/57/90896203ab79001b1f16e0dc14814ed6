@@ -1,0 +1,54 @@
+package com.daos;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.orm.hibernate5.HibernateTemplate;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+
+import com.student.StudentRegister;
+
+@Component
+@Repository
+public class StudDao {
+	
+	@Autowired
+	HibernateTemplate hibernateTemplate;
+	
+	@Autowired
+    private SessionFactory sessionFactory;
+		
+	
+	@Transactional
+	public void saved(StudentRegister student)
+	{
+		System.out.println("***************DAO LAYER************************");
+		this.hibernateTemplate.save(student);
+	}
+	
+	public List<StudentRegister> find()
+	{
+		List<StudentRegister> student= this.hibernateTemplate.loadAll(StudentRegister.class);
+		return student;
+	}
+	
+	public void takeOut(int id)
+	{
+		Session session = sessionFactory.getCurrentSession();
+        StudentRegister student = (StudentRegister) session.get(StudentRegister.class, new Integer(id));
+        if(null != student){
+            session.delete(student);
+		
+		/*
+		 * StudentRegister sr = this.hibernateTemplate.load(StudentRegister.class, id);
+		 * 
+		 * this.hibernateTemplate.delete(sr);
+		 */		
+	}
+
+}

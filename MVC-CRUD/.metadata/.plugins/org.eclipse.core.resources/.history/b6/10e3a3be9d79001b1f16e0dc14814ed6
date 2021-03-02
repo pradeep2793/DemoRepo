@@ -1,0 +1,72 @@
+package com.control;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.InitBinder;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.view.RedirectView;
+
+import com.formvalidation.ValidationForm;
+import com.service.MyService;
+import com.student.StudentRegister;
+
+@Component
+@Controller
+public class MyController {
+
+	@Autowired
+	MyService myService;
+
+	@Autowired
+	private ValidationForm validationForm;
+
+//	@InitBinder
+//	private void initBinder(WebDataBinder binder) {
+//		binder.setValidator(validationForm);
+//	}
+
+	@RequestMapping("/")
+	public String getStudent(Model model) {
+
+		model.addAttribute("data", myService.fetch());
+		System.out.println("************FIND ALL****************");
+		return "index";
+	}
+
+	@RequestMapping("/add")
+	public String getForm(Model model) {
+		model.addAttribute("student", new StudentRegister());
+		return "add-student";
+	}
+
+	@RequestMapping(value = "/save-form", method = RequestMethod.POST)
+	public String savedForm(@ModelAttribute("student") @Validated StudentRegister student, BindingResult result, Model model) {
+
+		validationForm.validate(student, result);
+		if(result.hasErrors())
+			return "add-student";
+		System.out.println(student);
+		myService.input(student);
+		return "redirect:/";
+	}
+
+	@RequestMapping(value = "/delete/{id}")
+	public RedirectView remove(@PathVariable("id") int id, HttpServletRequest request, Model model) {
+		
+		RedirectView rv = new RedirectView();
+		rv.setUrl(request.getContextPath() + "/");
+		this.myService.takeOut(id);
+		return rv;
+	}
+}

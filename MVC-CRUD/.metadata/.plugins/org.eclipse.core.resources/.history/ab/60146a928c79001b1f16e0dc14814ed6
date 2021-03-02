@@ -1,0 +1,26 @@
+<%@ page trimDirectiveWhitespaces="true"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ page isELIgnored="false"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+		<div style="margin: auto; width: 665px">
+		<form:form action="save-form" modelAttribute = "student" method="post">
+			<form:label path="name">Name</form:label>
+			<br>
+			<form:input path="name" />
+			<br>
+			<br>
+			<form:button>submit</form:button>
+
+
+		</form:form>
+	</div>
+	
+</body>
+</html>
