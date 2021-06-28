@@ -1,0 +1,5 @@
+If you wish not to use maven for your project, you can download the jar file. 
+
+1. Go to the lib directory directly under your project in Files folder and copy the jar file. 
+
+2. Then, if you are using ee, right click on that jar file, a pop-up menu will open up, from the pop-up menu, hover over Build Path and click an 'Add to Build Path'.

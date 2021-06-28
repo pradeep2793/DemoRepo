@@ -1,0 +1,29 @@
+To add new link in My Account follow below steps : 
+
+1. First you need to create a CMSLinkComponent(eg :contact us) & then add that to AccountLeftNavNode as per below impex.
+
+
+open "/cheneyb2cinitialdata/resources/cheneyb2cinitialdata/import/sampledata/contentCatalogs/cheneyRetailContentCatalog/cms-responsive-content.impex", create below impex, take reference of existing cms link Example : close account, replace impexes values correspondingly : 
+
+	INSERT_UPDATE CMSLinkComponent ; $contentCV[unique=true] ; uid[unique=true]    ; name                ; url                         ; &linkRef            ; target(code)[default='sameWindow'] 
+                               ;                         ; CloseAccountLink    ; CloseAccountLink    ; /my-account/close-account   ; CloseAccountLink    ;                                    
+							   ;						 ; ContactusLink		; ContactusLink      ; /my-account/contact-us		; ContactusLink		 ;		
+
+---------------------------------------------
+INSERT_UPDATE CMSNavigationNode ; uid[unique=true]       ; $contentCV[unique=true] ; name             ; parent(uid, $contentCV) ; links(&linkRef) ; &nodeRef               
+                                ; CloseAccountNavNode    ;                         ; Close Account    ; MyAccountNavNode        ;                 ; CloseAccountNavNode    
+   								; ContactusNavNode		 ;						   ; Contact us		  ; MyAccountNavNode		;				  ; ContactusNavNode
+   
+2. In order to give name to link to look in UI, goto cms-responsive-content-en.impex and provide CLS Link component name (in our case Contact us)
+
+	/cheneyb2cinitialdata/resources/cheneyb2cinitialdata/import/sampledata/contentCatalogs/cheneyRetailContentCatalog/cms-responsive-content_en.impex
+
+UPDATE CMSLinkComponent;$contentCV[unique=true];uid[unique=true];linkName[lang=$lang]
+		       ;		       ;ContactusLink	;"Contact Us"
+
+3. Sync Cheney Retail content catalog
+
+4. ant all. start server and verify
+
+(Reference link : https://answers.sap.com/questions/12759112/can-anyone-help-me-to-understand-the-impex-files-h.html?childToView=12788802#answer-12788802)
+

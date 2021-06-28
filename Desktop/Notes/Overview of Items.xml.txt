@@ -1,0 +1,53 @@
+i) Items.xml file contains the type definition in hybris.
+ii) We can define the new item types, extend the existing item types in the items.xml file.
+iii) The basic structure of items.xml is as below :
+
+		<items   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   	 	xsi:noNamespaceSchemaLocation="items.xsd">
+ 
+		    <atomictypes>
+		    ...
+		    </atomictypes>
+		 
+		    <collectiontypes>
+		    ...
+		    </collectiontypes>
+		 
+		    <enumtypes>
+		    ...
+		    </enumtypes>
+		 
+		    <maptypes>
+		    ...
+		    </maptypes>
+		 
+		    <relations>
+		    ...
+		    </relations>
+		 
+		    <itemtypes>
+		    ...
+		    </itemtypes>
+
+		</items>
+
+	SHORT FORM (ACEMRI)
+
+iv) Within itemtypes, we can define file using code ,deployment and all the attributes for that item type.
+
+	<itemtype code="SampleType1"
+		extends="GenericItem" autocreate="true"  generate="true">
+		 <deployment table="SampleType1" typecode="11000"/>
+
+		<attributes>
+			<attribute>
+			………
+			</attribute>
+			<attribute>
+			………
+			</attribute>
+			<attribute>
+			………
+			</attribute>
+		</attributes>
+	</itemtype>

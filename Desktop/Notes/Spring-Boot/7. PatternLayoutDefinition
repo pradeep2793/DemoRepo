@@ -1,0 +1,27 @@
+************************** IMPORTANT PATTERN *********************
+	%C = Class Name
+	%M = Method Name
+	%m = Message
+	%p = Priority Method name(debug, info...)
+	%L = Line number
+	%l = Line number with link(for console )
+	%n = new Line
+	%r = time in milli seconds
+	%% = print %
+
+We can use any symbol that will print its as it is except %.
+
+**************DATE & TIME PATTERN FORMAT****************************
+
+%d 			= date & time (default format with ms)
+%d {dd-MM-yy hh:mm:ss}  = date & time(can we define our own format using {})
+dd			= date
+MM			= Month number
+MMM			= Month in words
+yy			= year last 2 digit
+yyyy			= year 4 digit numeric
+hh			= hours in 12 format
+HH			= hours in 24 format
+mm			= minutes
+ss			= seconds
+SSS			= milli seconds

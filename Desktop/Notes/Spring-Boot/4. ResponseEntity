@@ -1,0 +1,43 @@
+Definition :- ResponseEntity is an extension of HttpEntity that represents an HTTP response including status, headers and body. ResponseEntity 		     allows you to modify the response with optional headers and status code. In spring applications, ResponseEntity is used in 	     @Controller methods as well as in RestTemplate.
+
+Example :-	@GetMapping("/")
+		public ResponseEntity<List<Student>> fetch(Model model)
+		{
+			model.addAttribute("data", crudService.getStudents());
+			List<Student> students = crudService.getStudents(); // to fetch data from service via DB.
+			if(students.isEmpty()) // if no record found
+			{
+				return ResponseEntity.status(HttpStatus.NOT_FOUND).build(); // will throw 404 not found
+			}
+			else
+				return ResponseEntity.of(Optional.of(students)); // if record found, then return json response		
+			}
+		}
+
+***************************************************************************
+
+In PostMan we will get json object.
+
+i. |||ly for save, we need to pass json object as : 
+	{
+		"fieldName" : "value",
+		....
+	}
+
+
+ii. Use @RequestBody annotation to receive json object data from PostMan : 
+
+	@PostMapping(value = "/save-details")
+	public ResponseEntity<Student> insertStudent(@RequestBody Student student) {
+		try {
+		crudService.insertDetails(student);
+		System.out.println(student);
+		return ResponseEntity.status(HttpStatus.OK).build();
+		}
+		catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+			return ResponseEntity.status(HttpStatus.CONFLICT).build();
+		}
+	}
+

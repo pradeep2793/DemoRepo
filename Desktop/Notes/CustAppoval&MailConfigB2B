@@ -1,0 +1,19 @@
+1. Fire customer-b2bunit.impex
+	/cheneycustomerprofiledata/resources/cheneycustomerprofiledata/import/sampledata/customer-b2bunit.impex 
+
+2. Fire customer.impex
+	(Include one line in customer impex with id which is needed to create)
+	/cheneycustomerprofiledata/resources/cheneycustomerprofiledata/import/sampledata/customer.impex
+
+3. Reset password for same through backoffice using "b2b customer" and verify on store front
+
+4. Setting mail from address : 
+	local.properties (add smtp port,from,id,password)
+	tls - true
+	Login hAC -> config -> smtp (verify port, id, pswd, tls are updated, if not do manually or stop and restart server).
+
+5. In Gmail "from" account, Manage your Account -> Security -> turn on (Use less secure app & save)
+
+6. Clik on forget pswd in SF, and check for reset mail to verify.
+
+

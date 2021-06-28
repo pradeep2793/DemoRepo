@@ -1,0 +1,32 @@
+1. Create SHortend link using bitly v4 by following below link : 
+	https://samuelezedi.medium.com/bitly-api-how-to-create-a-shortened-link-with-bitly-api-v4-98f4b3358ed7
+2. Find Java class, use RestTemplate : 
+	final RestTemplate restTemplate = new RestTemplate();
+		final HttpHeaders header = new HttpHeaders();
+		header.setContentType(MediaType.APPLICATION_JSON);
+		header.setBearerAuth(Config.getParameter("bearer.auth.bitly"));
+		shortLinkRequest.setlong_url(getSiteBaseUrlResolutionService().getWebsiteUrlForSite(getBaseSite(),
+				getUrlEncodingAttributes(), true, "/login/pw/change", "token=" + getURLEncodedToken()));
+
+		shortLinkRequest.setGuid(Config.getParameter("guid.group.bitly"));
+
+		final HttpEntity<ShortenLinkRequest> request = new HttpEntity<>(shortLinkRequest, header);
+
+		final ResponseEntity<ShortLinkResponse> response = restTemplate.exchange(url, HttpMethod.POST, request,
+				ShortLinkResponse.class);
+
+		if (response.getStatusCode() == HttpStatus.OK || response.getStatusCode() == HttpStatus.CREATED)
+		{
+			shortLinkResponse = response.getBody();
+			return shortLinkResponse.getLink();
+		}
+		else
+		{
+			return getSiteBaseUrlResolutionService().getWebsiteUrlForSite(getBaseSite(), getUrlEncodingAttributes(), true,
+					"/login/pw/change", "token=" + getURLEncodedToken());
+		}
+3. Do ant all, server start & verify.
+4. If need to change email template or required adding additional content, then find .vm file(through java file name from, step 2).
+5. Do the modification, run impex (email-context_en.impex & email-context.impex)
+6. Verify now.
+

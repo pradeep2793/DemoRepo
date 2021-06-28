@@ -1,0 +1,9 @@
+1. JSP View in Spring Boot
+	Four Steps to do in order to view jsp in spring boot : 
+	i) create webapp/views folder in src/main folder----under views folder, create jsp page
+	ii)configure view resolver using prefix and suffix under application.properties file as :
+		spring.mvc.view.prefix=/views/
+		spring.mvc.view.suffix=.jsp
+	iii) add dependancy tomcat-embed-jasper which will resolve jsp and compile and run into tomcat.
+	iv) create controller and return view using RequestMapping.
+

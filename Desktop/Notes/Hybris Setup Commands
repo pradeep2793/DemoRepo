@@ -1,0 +1,13 @@
+1. Download CXCOMM..zip & extract it.
+2. get hybris project folder from git
+	git clone https://192.168.0.2:8443/git/cheney-b2b2c.git
+	git clone https://271549@git.ics-global.in:8443/r/cheney-b2b2c.git
+3. copy newly downloaded folder contents from git to CXCOMM.. folder
+4. Goto platform path and execute below commands :
+	i) . ./setantenv.sh
+	ii) ant customize
+	git checkout CBHYRIS-177
+	iii)ant clean all 
+	iv) ant initialize
+	v) sh hybrisserver.sh
+

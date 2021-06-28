@@ -1,0 +1,27 @@
+PRACTICAL : 
+
+How to print logs: 
+
+1. create static Logger object using below line : 
+	Ex : private static Logger log = Logger.getLogger(Example.class);
+
+2. Go in reverse order now : 
+	i. create Layout object : 
+		Layout layout = new SimpleLayout();
+
+ 	ii. create Appender object as and pass layout object: 
+		Appender appender = new ConsoleAppender(layout);
+
+	iii. pass appender object in logger object as : 
+		log.addAppender(appender);
+
+3. now print logs as : log.debug("some message here");...and so on & so forth..
+************************************************************************************
+
+####################### FILE APPENDER #########################################
+To print logs in seperate files : 
+	Appender appender = new FileAppender(layout,"/home/dell/Desktop/appender.log");
+Thus it will create seperate file as appender.log under mention folder and logs will be written on it.
+
+****************************************************************************************
+

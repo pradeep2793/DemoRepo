@@ -1,0 +1,24 @@
+Initialisation can be done in 2 ways : a. ant initialise, b. through HAC
+
+Initialize does the following things :
+
+	Removes all the existing data
+
+	Drops all the existing schema and tables
+
+	Recreates the schema and tables
+
+	Reload the data(seed data given by hybris, we can also load our own data)
+----------------------------------------------------------------------------------------
+
+Update : Update too can be done in 2 ways : a. ant updatesystem, b. through HAC
+
+Update does the following things :
+
+	it will just modify the changes requested,it will not clear any existing data or tables.
+
+	If we are requesting to create the new tables or columns,update will do that without 		modifying any other details in DB.
+
+	So update will be faster than initialize
+
+	Existing data will not be lost if we do Update.

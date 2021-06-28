@@ -1,0 +1,39 @@
+We can fetch record from db using our own custom queries like search, sorting, distinct,like patters, between dates and so on...
+
+1. In UserRespository interface which we have created extending JpaRespository, we need to define abstract method using query like method matching method and jpa will automatically provides its implementation.
+
+	 i. To fetch record based on lastName,
+		List<User> findByLastName(String lastName);
+	
+	ii. To fetch record based on starting with letters : 
+		List<User> findByLastNameStartingWith(String prefix);
+	
+	iii. To fetch record based on ending with letters : 
+		List<User> findByLastNameEndingWith(String suffix);
+	
+	iv. To fetch record containing letters in between : 
+		List<User> findByLastNameContaining(String word);
+	
+	v. To fetch record using AND : 
+		List<User> findByFirstNameAndLastName(String fname, String lname);
+	
+	vi. TO fetch record using Less than any number : 
+		List<User> findByAgeLessThan(int age);
+
+	vii. TO fetch record using greater than any number including number : 
+		List<User> findByAgeGreaterThanEqual(int age);
+
+	viii. IN operator : 
+		List<User> findByAgeIn(Collection<Integer> ages);
+
+	ix. Sorting or Order By operator : 
+		List<User> findByAgeOrderByFirstName(String age);
+
+
+2.	find = Introducer
+	By = Criteria
+	Field = LastName
+
+3. For more sql custom methods, goto https://www.youtube.com/watch?v=QeRCW28jhFY&list=PL0zysOflRCelmjxj-g4jLr3WKraSU_e8q&index=14.
+
+

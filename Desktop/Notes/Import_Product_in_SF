@@ -1,0 +1,15 @@
+
+1. Login HAC and run 
+
+	/cheneycustomerprofiledata/resources/cheneycustomerprofiledata/import/sampledata/sample_products.impex
+
+2. Login BackOffice and search synchronisation
+
+	sync catalog
+
+3. Now search FacetSearch configuration in backoffice
+
+	select “cheney harvest index” -> index -> full.
+
+4. Now verify in store fron.
+

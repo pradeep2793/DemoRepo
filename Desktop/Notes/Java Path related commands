@@ -1,0 +1,15 @@
+1. To check Java directory where installed : 
+
+		update-alternatives --list java
+
+2. Check java version :
+		java -version
+
+3. 111 server : 
+		export JAVA_HOME="/home/admin/Downloads/jdk-11.0.4"
+		echo $JAVA_HOME
+
+4. on local : 
+		export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64"
+		
+

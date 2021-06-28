@@ -1,0 +1,13 @@
+*********************2 STEP & 4 STEP SETUP in BACKOFFICE****************************************
+
+4 Step :
+
+	Login backOffice -> base store -> cheneySF -> administration -> checkout flow group -> authorizeSHCheckoutGroup
+
+2 Step Checkout : 
+	
+	Login backOffice -> base store -> cheneySF -> administration -> checkout flow group -> authorizeGWTwoStepCheckoutGroup
+
+
+
+

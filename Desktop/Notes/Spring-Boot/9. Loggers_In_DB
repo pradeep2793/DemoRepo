@@ -1,0 +1,41 @@
+Below is the configuratuon which will print logs in both Console as well as in File.
+
+
+--------------------------------------------------------------------------------------------------------------------
+#------- ROOT LOGGER ----------------------------------
+
+log4j.rootLogger=DEBUG,myout, myfile, db
+
+# Logger+Appender details
+
+#------------- CONSOLE APPENDER ************************************
+
+log4j.appender.myout=org.apache.log4j.ConsoleAppender
+log4j.appender.myout.Target=System.out
+#log4j.appender.myout.layout=org.apache.log4j.SimpleLayout
+
+log4j.appender.myout.layout=org.apache.log4j.PatternLayout
+log4j.appender.myout.layout.ConversionPattern=%d{yyyy-MM-dd hh:mm}----> %p %c (%M) %n
+
+#******************** FILE APPENDER *****************************
+
+log4j.appender.myfile=org.apache.log4j.FileAppender
+log4j.appender.myfile.file=/home/dell/Desktop/Notes/myLogs.log
+
+log4j.appender.myfile.layout=org.apache.log4j.PatternLayout
+log4j.appender.myfile.layout.ConversionPattern=%d{yyyy-MM-dd hh:mm}----> %p %c (%M) %n
+
+#********************** LOGS STORING IN DB ****************************
+
+1. First create table in db as "Logs" with fields Method Name, Date, ClassName, Priority Method name, message.
+
+log4j.appender.myfile.db = org.apache.log4j.jdbc.JDBCAppender (db= root logger mentioned above)
+log4j.appender.myfile.db.driver = com.mysql.jdbc.Driver
+log4j.appender.myfile.db.URL = jdbc:mysql://localhost:3306/logdb
+log4j.appender.myfile.db.user = root
+log4j.appender.myfile.db.password = Welcome@123
+
+log4j.appender.myfile.layout=org.apache.log4j.PatternLayout
+log4j.appender.myfile.sql = INSERT INTO LOG VALUES('%M', now(), '%C', '%p', '%m')
+
+-------------------------------------------------------------------------------------------------------------------

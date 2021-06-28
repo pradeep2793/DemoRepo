@@ -1,0 +1,41 @@
+CCV1 Stage environment endpoints on 117:
+
+SF :- https://hybris-stg-cheneyharvest.cheneybrothers.com/retailstore/cheneySF/en/login?site=cheneySF&clear=true
+
+GW :- https://hybris-stg-cheneyretail.cheneybrothers.com/retailstore/cheneyGW/en/login?site=cheneyGW&clear=true
+
+express (B2B) :- https://hybris-stg.cheneybrothers.com/store/cheney/en/USD/login
+	Credentials:- 
+			UserName :- hybris.test15@gmail.com
+			Password :- 1234
+			
+Backoffice :- https://admin-hybris-stg.cheneybrothers.com/backoffice/
+
+HAC :- https://admin-hybris-stg.cheneybrothers.com/hac/
+
+Backoffice and HAC credentials :-
+	UserName :- admin
+	Password :- ICSexpress@2020
+
+*******************************DEV ENVIROMENT*******************************************
+
+CCV2 Dev environment endpoints :-
+
+
+https://cheneyexpress-dev.c60d2rjd2s-cheneybro1-d1-public.model-t.cc.commerce.ondemand.com/store/cheney/en/USD/login
+
+https://cheney-southernfoods-dev.c60d2rjd2s-cheneybro1-d1-public.model-t.cc.commerce.ondemand.com/retailstore/cheneySF/en/login
+
+https://cheney-grandwestern-dev.c60d2rjd2s-cheneybro1-d1-public.model-t.cc.commerce.ondemand.com/retailstore/cheneyGW/en/login
+
+https://backoffice.c60d2rjd2s-cheneybro1-d1-public.model-t.cc.commerce.ondemand.com/backoffice/login.zul
+
+https://backgroundprocessing.c60d2rjd2s-cheneybro1-d1-public.model-t.cc.commerce.ondemand.com/login.jsp
+
+Backoffice and hac credential :-
+
+userName : admin
+password : >?1!?vLBVnWJa&k[VQk*SOpFs
+
+*******************************************************************
+

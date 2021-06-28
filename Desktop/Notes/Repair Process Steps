@@ -1,0 +1,8 @@
+Repair process steps : 
+
+1. Login backoffice
+2. search business process
+3. search order process with order id
+4. check on which steps stucked
+5. click on bandage icon beside delete icon
+6. select target step and click on start.

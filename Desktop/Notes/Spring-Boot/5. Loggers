@@ -1,0 +1,71 @@
+1. Loggers are basically used in production environment to fix the errors occured in real time.
+
+2. In production environment, console's are not there to point out the exception or error. Also if anyhow external console is deployed in prod, still console is a temporary storage which will point out last 100 or 200 lines.
+
+3. In order to overcome above problems, Loggers concept was introduced.
+
+4. Log4J is a tool from apache which is used to manage logging process.
+
+5. Log4J Components : 
+	
+	i. Logger		ii. Appender		iii. Layout
+	  (which class)		 (where to print) 	 (how to print)
+
+=====> Logger :
+	=> This object must be created inside classes where log4J is required (Ex : Controllers, services, Repositories etc...).
+	=> If we get any exception/error inside these classes, we can trace those error using .log files.
+	=> Dont create Logger object inside classes like Model, entities etc..
+
+=====> Appender : 
+	=> Appender is used to specify where to store log messages.
+	=> Types of Appenders are : 
+		a. ConsoleAppender	: used to print logs in console(mainly used by developer on developer machine).
+		b. FileAppender **	: Store log messages in .log file. 
+		c. JdbcAppender 	: Store log messages inside db table.
+		d. Ftp/TelnetAppender 	: send data from one server to another.
+		e.SMTPAppender 		: send log messages through email.
+
+=====> Layout : 
+	=> It specifies the message format to be printed on Appender.
+	=> Types of Layout's are : 
+		a. SimpleLayout : print the messages as it(Ex. java.lang.Exception....)	
+		b. HTML Layout : print the messages in html format in appender.
+		c. XML Layout : print the messages in XML format in appender.
+		d. Pattern layout ** : print message as pattern gien by programmer. (Ex : dat/time class method_name error).
+
+*****************PRIORITY METHODS*********************************************
+
+These are predefined methods given inside Logger object. By using these method, we can print messages inside Appender.
+-------------------------------------------------------------
+	SrNo.		Name		Method
+--------------------------------------------------------------
+
+	1. 		DEBUG		debug()
+	2. 		INFO		info()
+	3.		WARN		warn()
+	4.		ERROR		error()
+	5.		FATAL		fatal()
+
+Mostly debug, info and error are used by programmers whereas warn and fatal are handled automatically by spring boot applications
+--------------------------------------------------------------
+
+1. DEBUG : 
+	These method is used to print final success messages.
+	Ex. Employee with id 123 created successfully.
+
+2. INFO : 
+	These method is used to give information regarding current status.
+	Ex : Request comes to controller now, Object send to Service, try block executed compltely and so on..
+
+3. WARN : 
+	These mthod is used to print warning in the Appender.
+	Ex : File Object created but never closed, variable declared but not used and so on..
+
+4. ERROR : 
+	These mthod is used to print exception in the Appender.
+	Ex : ArrayIndexOutOfBoundExveption, NullPointerException and so on..
+
+5. FATAL : 
+	High Level problems/exception stopping the complete apllication usage.
+	Ex : DB connection not working, Network/MiddleWare server is down.
+

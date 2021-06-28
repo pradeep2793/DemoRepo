@@ -1,0 +1,10 @@
+Steps : 
+
+1. Create spring boot starter project, add dependancy---spring data jpa, mysql connector
+2. in project properties, add db config data as : username, password, dialect, name,url, ddl auto.
+3. create entity class
+4. create interface repository extending either JpaRespository(child interface of CrudRepository) or CrudRepository.
+5. in main method, create ApplicationContext object, after that getBean of step 4 repository(interface repository dont need to create class).
+6. create entity object, set values in it.
+7. then to save in db, use step 5 reference.save(entity).
+8. Done

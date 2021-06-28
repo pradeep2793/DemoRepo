@@ -1,0 +1,14 @@
+steps install :
+
+1. sudo add-apt-repository ppa:phusen/openconnect
+	
+2. sudo apt-get update
+
+3. sudo apt install openconnect
+
+
+----- for connect Then use terminal to connect to Cheney VPN using: -----
+
+1. sudo openconnect -v --protocol=gp vpnriv.cheneybrothers.com
+	username : nsharma
+	password : Stokes*2019
